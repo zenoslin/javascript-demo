@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>动态数据曲线图</title>
+
+
+    <link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+
+    <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+
+
+
+</head>
+<body>
+
+
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script type='text/javascript'>//<![CDATA[
+
+Highcharts.setOptions({
+    global: {
+        useUTC: false
+    }
+});
+
+function activeLastPointToolip(chart) {
+    var points = chart.series[0].points;
+    chart.tooltip.refresh(points[points.length -1]);
+}
+
+$('#container').highcharts({
+        chart: {
+            type: 'spline',
+            animation: Highcharts.svg,
+            marginRight: 10,
+            events: {
+                load: function () {
+                    // 实时更新函数
+                    var series = this.series,
+                        chart = this;
+                    setInterval(function () {
+                        var x = (new Date()).getTime(), // current time
+                            y = Math.random(),
+                            y2 = Math.random();
+                        //这里因为addPoint同时增加多个数值导致绘图出现平移
+                        // 所以第二个数值选false，暂时不要重绘
+                        series[0].addPoint([x, y], false, true);
+                        series[1].addPoint([x, y2], false, true);
+                        activeLastPointToolip(chart);
+                        //执行完所有加点操作之后进行重绘
+                        chart.redraw();
+                    }, 1000);
+                }
+            }
+        },
+
+        title: {
+            text: '动态数据曲线图'
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150
+        },
+        yAxis: {
+            title: {
+                text: '数值'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                    Highcharts.numberFormat(this.y, 2);
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [{
+            name: '随机数1',
+            data: (function () {
+                // 生成随机数组来做动态模拟量
+                var data = [],
+                    time = (new Date()).getTime(),
+                    i;
+
+                for (i = -19; i <= 0; i += 1) {
+                    data.push({
+                        x: time + i * 1000,
+                        y: Math.random()
+                    });
+                }
+                return data;
+            }())
+        },{
+            name: '随机数2',
+            data: (function () {
+                // 生成随机数组来做动态模拟量
+                var data = [],
+                    time = (new Date()).getTime(),
+                    i;
+
+                for (i = -19; i <= 0; i += 1) {
+                    data.push({
+                        x: time + i * 1000,
+                        y: Math.random()
+                    });
+                }
+                return data;
+            }())
+        }]
+    },
+    function(c) {
+        activeLastPointToolip(c)
+    }
+);
+//]]>
+
+</script>
+
+
+
+
+</body>
+</html>
