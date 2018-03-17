@@ -1,5 +1,7 @@
-/*bind方法模拟**
-**bind方法 ES5 IE9+*/
+/*
+ind方法模拟
+bind方法 ES5 IE9+
+*/
 
 //ES5 IE9.0+
 function f00(){
