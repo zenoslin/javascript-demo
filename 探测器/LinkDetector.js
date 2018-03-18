@@ -1,6 +1,6 @@
 /*
-实践-探测器
-form：慕课网-JavaScript深入浅出-9.2 by.Bosh
+**实践-探测器
+**Form：慕课网-JavaScript深入浅出-9.2 by.Bosn
 */
 !function(global){
 	function DetectorBase(configs){

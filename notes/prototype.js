@@ -1,5 +1,5 @@
 /*
-Object.create继承模拟
+**Object.create继承模拟
 */
 
 //ES5之后才支持
