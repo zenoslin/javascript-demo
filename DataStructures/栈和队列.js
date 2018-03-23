@@ -1,7 +1,7 @@
 /*
-JavaScript数据结构（2）：栈与队列
-来源：https://segmentfault.com/a/1190000010344706
-翻译来源：https://code.tutsplus.com/articles/data-structures-with-javascript-stack-and-queue--cms-23348
+**JavaScript数据结构（2）：栈与队列
+**来源：https://segmentfault.com/a/1190000010344706
+**翻译来源：https://code.tutsplus.com/articles/data-structures-with-javascript-stack-and-queue--cms-23348
 */
 
 
