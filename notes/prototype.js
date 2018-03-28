@@ -11,7 +11,7 @@ function Student(){
 
 }
 
-Student.prototype = Object.create(Person,prototype);
+Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Person;
 
 //在ES5之前的环境模拟Object.create方法
