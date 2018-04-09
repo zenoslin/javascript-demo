@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>traffic light</title>
+    <style>
+		#light{
+			width: 100px;
+			height: 100px;
+			-moz-border-radius: 50px;
+			-webkit-border-radius: 50px;
+			border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body onload="turnRed()">
+	<div id="light"></div>
+</body>
+
+<script>
+	let light = document.getElementById("light");
+
+	function turnRed () {
+		light.style.background = "red";
+		setTimeout(turnYellow , 10000);
+    }
+    function turnYellow () {
+		light.style.background = "yellow";
+		setTimeout(turnGreen, 3000);
+
+    }
+    function turnGreen () {
+		light.style.background = "green";
+		setTimeout(turnRed, 5000);
+	}
+</script>
+</html>
