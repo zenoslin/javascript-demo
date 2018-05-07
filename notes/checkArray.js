@@ -1,7 +1,7 @@
 function unique5(array){
   var r = [];
-  for(var i = 0, l = array.length; i < l; i++) {
-    for(var j = i + 1; j < l; j++)
+  for(var i = 0; i < array.length; i++) {
+    for(var j = i + 1; j < array.length; j++)
       if (array[i] === array[j]) j = ++i;
     r.push(array[i]);
   }

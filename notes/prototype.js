@@ -3,13 +3,8 @@
 */
 
 //ES5之后才支持
-function Person(){
-
-}
-
-function Student(){
-
-}
+function Person(){};
+function Student(){};
 
 Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Person;
