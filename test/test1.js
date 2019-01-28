@@ -13,10 +13,6 @@ var foo = {n:1};
 })(foo);
 console.log(foo.n);
 
-1 2 3
-
-
-
 var A = {n:4399};
 var B = function(){
 	this.n = 9999
