@@ -1,27 +1,29 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-size: 100px;
-            }
-        </style>
-    </head>
-    <body>
-        <script>
-            //var f = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'];
-            var f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
 
-            function loop() {
-                location.hash = f[Math.floor((Date.now()/100)%f.length)];
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个Emoji标题</title>
+    <style>
+        body {
+            font-size: 100px;
+        }
+    </style>
+</head>
 
-                setTimeout(loop, 50);
-            }
+<body>
+    <script>
+        let EmojiArr = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
+        let titleStr = document.title;
+        function loop() {
+            location.hash = EmojiArr[Math.floor((Date.now() / 100) % EmojiArr.length)];
+            document.title = titleStr + EmojiArr[Math.floor((Date.now() / 100) % EmojiArr.length)];
+            setTimeout(loop, 50);
+        }
+        window.addEventListener('load', function () {
+            loop();
+        });
+    </script>
+</body>
 
-            window.addEventListener('load', function () {
-                loop();
-            });
-        </script>
-    </body>
 </html>

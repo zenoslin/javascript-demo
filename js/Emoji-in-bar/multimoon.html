@@ -1,60 +1,55 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-size: 100px;
-            }
-        </style>
-    </head>
-    <body>
-        <script>
-            //var f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
-            //var f = ['🌚', '🌘', '🌗', '🌖', '🌝', '🌔', '🌓', '🌒'],
-            var f = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒'],
-                    // 0    1     2     3      4    5     6      7
-                d = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                m = 0;
 
-            function loop() {
-                var s = '', x = 0;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-size: 100px;
+        }
+    </style>
+</head>
 
-                if (!m) {
-                    while (d[x] == 4) {
-                        x ++;
-                    }
+<body>
+    <script>
+        //var f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
+        //var f = ['🌚', '🌘', '🌗', '🌖', '🌝', '🌔', '🌓', '🌒'],
+        var emojiArr = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒'],
+            // 0    1     2     3    4     5    6     7
+            stateArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            m = 0;
+        function loop() {
+            var s = '',
+                x = 0;
 
-                    if (x >= d.length) m = 1;
-                    else {
-                        d[x] ++;
-                    }
+            if (!m) {
+                while (stateArr[x] == 4) {
+                    x++;
                 }
+                if (x >= stateArr.length) m = 1;
                 else {
-                    while (d[x] == 0) {
-                        x ++;
-                    }
-
-                    if (x >= d.length) m = 0;
-                    else {
-                        d[x] ++;
-
-                        if (d[x] == 8) d[x] = 0;
-                    }
+                    stateArr[x]++;
                 }
-
-                d.forEach(function (n) {
-                    s += f[n];
-                });
-
-                location.hash = s;
-
-                setTimeout(loop, 50);
+            } else {
+                while (stateArr[x] == 0) {
+                    x++;
+                }
+                if (x >= stateArr.length) m = 0;
+                else {
+                    stateArr[x]++;
+                    if (stateArr[x] == 8) stateArr[x] = 0;
+                }
             }
-
-            window.addEventListener('load', function () {
-                loop();
+            stateArr.forEach(function (n) {
+                s += emojiArr[n];
             });
-        </script>
-    </body>
+            location.hash = s;
+            setTimeout(loop, 50);
+        }
+        window.addEventListener('load', function () {
+            loop();
+        });
+    </script>
+</body>
+
 </html>
