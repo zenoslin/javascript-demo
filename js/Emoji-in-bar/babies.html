@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function loop() {
+                var s = '',
+                    e = ['🏻', '🏼', '🏽', '🏾', '🏿'],
+                    i, m;
+
+                for (i = 0; i < 10; i ++) {
+                    m = Math.floor(e.length * ((Math.sin((Date.now()/100) + i)+1)/2));
+                    s += '👶' + e[m];
+                }
+
+                location.hash = s;
+
+                setTimeout(loop, 50);
+            }
+
+            window.addEventListener('load', function () {
+                loop();
+            });
+        </script>
+    </body>
+</html>
+

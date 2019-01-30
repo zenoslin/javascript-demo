@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var f = [], i;
+
+            for (i = 0; i < 12; i ++) {
+                f.push(String.fromCodePoint(0x1F550 + i));
+                //f.push(String.fromCodePoint(0x1F550 + i + 12)); // half hours
+            }
+
+            function loop() {
+                location.hash = f[Math.floor((Date.now()/100)%f.length)];
+
+                setTimeout(loop, 50);
+            }
+
+            window.addEventListener('load', function () {
+                loop();
+            });
+        </script>
+    </body>
+</html>

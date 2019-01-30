@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 100px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <video id="video" src="self-portrait.mp4" autoplay controls muted />
+        <script>
+            var e = ['🌑', '🌘', '🌗', '🌖', '🌕'],
+                video;
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds/60),
+                    seconds = Math.floor(seconds - (minutes*60));
+
+                return ('0'+minutes).substr(-2) + ':' + ('0'+seconds).substr(-2);
+            }
+
+            function renderProgressBar() {
+                var s = '',
+                    c = 0,
+                    l = 10,
+                    p = Math.floor(video.currentTime / video.duration * ((l*5)-1)),
+                    i;
+
+                while (p >= 5) {
+                    s += e[4];
+                    c ++;
+                    p -= 5;
+                }
+                s += e[p];
+                c ++;
+
+                while (c < l) {
+                    s += e[0];
+                    c ++;
+                }
+
+                location.hash = s+formatTime(video.currentTime)+'╱'+formatTime(video.duration);
+            }
+
+            window.addEventListener('load', function () {
+                video = document.getElementById('video');
+                video.addEventListener('timeupdate', renderProgressBar);
+            });
+        </script>
+    </body>
+</html>
