@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是一个Emoji标题</title>
     <style>
         body {
             font-size: 100px;
@@ -12,43 +13,46 @@
 
 <body>
     <script>
-        //var f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
-        //var f = ['🌚', '🌘', '🌗', '🌖', '🌝', '🌔', '🌓', '🌒'],
-        var emojiArr = ['🌑', '🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒'],
-            // 0    1     2     3    4     5    6     7
-            stateArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            m = 0;
-        function loop() {
-            var s = '',
-                x = 0;
+        let emojiArr = ['🌑', '🌘', '🌗', '🌖', '🌝', '🌔', '🌓', '🌒'],
+            stateArr = [0, 0, 0, 0],
+            m = 0,
+            titleStr = document.title
 
+        function loop() {
+            let s = '',
+                x = 0
             if (!m) {
-                while (stateArr[x] == 4) {
-                    x++;
+                while (stateArr[x] == 4) { //满月时
+                    x++
                 }
-                if (x >= stateArr.length) m = 1;
-                else {
-                    stateArr[x]++;
+                if (x >= stateArr.length) {
+                    m = 1
+                } else {
+                    stateArr[x]++
                 }
             } else {
                 while (stateArr[x] == 0) {
-                    x++;
+                    x++
                 }
-                if (x >= stateArr.length) m = 0;
-                else {
-                    stateArr[x]++;
-                    if (stateArr[x] == 8) stateArr[x] = 0;
+                if (x >= stateArr.length) {
+                    m = 0
+                } else {
+                    stateArr[x]++
+                    if (stateArr[x] == 8) { //全黑时
+                        stateArr[x] = 0
+                    }
                 }
             }
             stateArr.forEach(function (n) {
-                s += emojiArr[n];
-            });
-            location.hash = s;
-            setTimeout(loop, 50);
+                s += emojiArr[n]
+            })
+            location.hash = s
+            document.title = titleStr + s
+            setTimeout(loop, 50)
         }
         window.addEventListener('load', function () {
-            loop();
-        });
+            loop()
+        })
     </script>
 </body>
 
