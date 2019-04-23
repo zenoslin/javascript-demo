@@ -3,7 +3,9 @@ import axios from 'axios'
 // 创建axios实例
 let service = axios.create({
     // headers: {'Centent': 'application/json'},
-    timeout: 60000
+    // baseURL: 'https://some-domain.com/api/',
+    // withCredentials: true,
+    timeout: 1000
 })
 // 设置 post,put 默认 Content-Type
 service.defaults.headers.post['Content-Type'] = 'application/json'
