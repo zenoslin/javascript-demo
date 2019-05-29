@@ -1,15 +1,23 @@
-const {DateUnil} = require('../date-util')
-let timeStamp = 1550131893
-let leftSecond = 99999
+const { DateUnil } = require("../date-util");
 
-console.log("hourOffset", DateUnil.hourOffset())
-console.log("minuteOffset", DateUnil.minuteOffset())
-console.log("getTotalTime", DateUnil.getTotalTime(timeStamp))
-console.log("format", DateUnil.format(timeStamp))
-console.log("formatHMS", DateUnil.formatHMS(timeStamp))
-console.log("formatHM", DateUnil.formatHM(timeStamp))
-console.log("formatLeftTimeNum", DateUnil.formatLeftTimeNum(leftSecond))
-console.log("formatLeftTimeStr", DateUnil.formatLeftTimeNum(leftSecond))
-console.log("formatLeftHorM", DateUnil.formatLeftHorM(leftSecond))
-console.log("formatLeftDHMS", DateUnil.formatLeftDHMS(leftSecond))
-console.log("formatLeftHMS", DateUnil.formatLeftHMS(leftSecond))
+const test = new DateUnil();
+test
+  .setYear(2019)
+  .setMonth(5)
+  .setDay(30)
+  .setHours(0)
+  .setMinute(0)
+  .setSecond(0)
+  .setMillisecond(0);
+
+console.log("hourOffset", test.hourOffset());
+console.log("minuteOffset", test.minuteOffset());
+console.log("getTotalTime", test.getTotalTime());
+console.log("format", test.format());
+console.log("formatHMS", test.formatHMS());
+console.log("formatHM", test.formatHM());
+console.log("formatLeftTimeNum", test.formatLeftTimeNum());
+console.log("formatLeftTimeStr", test.formatLeftTimeNum());
+console.log("formatLeftHorM", test.formatLeftHorM());
+console.log("formatLeftDHMS", test.formatLeftDHMS());
+console.log("formatLeftHMS", test.formatLeftHMS(":"));
