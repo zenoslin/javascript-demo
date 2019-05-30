@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var DateUtil = (function () {
     function DateUtil() {
         this.chinaHour = -8;
@@ -167,4 +169,4 @@ var DateUtil = (function () {
     };
     return DateUtil;
 }());
-export { DateUtil };
+exports.DateUtil = DateUtil;

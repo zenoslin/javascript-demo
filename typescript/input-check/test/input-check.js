@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 var InputCheck = (function () {
     function InputCheck($content) {
         if ($content === void 0) { $content = ""; }
@@ -70,4 +72,4 @@ var InputCheck = (function () {
     };
     return InputCheck;
 }());
-export { InputCheck };
+exports.InputCheck = InputCheck;

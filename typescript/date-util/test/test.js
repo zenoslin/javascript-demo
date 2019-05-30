@@ -1,10 +1,10 @@
-const { DateUnil } = require("../date-util");
+const { DateUtil } = require("./date-util");
 
-const test = new DateUnil();
+const test = new DateUtil();
 test
   .setYear(2019)
-  .setMonth(5)
-  .setDay(30)
+  .setMonth(12)
+  .setDay(25)
   .setHours(0)
   .setMinute(0)
   .setSecond(0)

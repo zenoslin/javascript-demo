@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "ES6",
+        "module": "CommonJS",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
@@ -9,6 +9,6 @@
         "outDir": "./"
     },
     "files": [
-        "./src/input-check.ts"
+        "../src/date-util.ts"
     ]
 }

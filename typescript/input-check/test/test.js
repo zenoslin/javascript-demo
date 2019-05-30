@@ -1,6 +1,6 @@
-const { inputCheck } = require('../input-check');
+const { InputCheck } = require('./input-check');
 
-const test = new inputCheck();
+const test = new InputCheck();
 
 test.setInput("").isEmpty("输入不能为空");
 if (!test.isPass) {

@@ -1,4 +1,4 @@
-class DateUnil {
+export class DateUtil {
   constructor() {
     this.ins = new Date();
   }
@@ -103,7 +103,10 @@ class DateUnil {
    */
   formatHMS(): string {
     let date: Date = this.ins;
-    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    let hours:string = date.getHours() > 9 ? "" + date.getHours() : "0" + date.getHours();
+    let minutes:string = date.getMinutes() > 9 ? "" + date.getMinutes() : "0" + date.getMinutes();
+    let seconds:string = date.getSeconds() > 9 ? "" + date.getSeconds() : "0" + date.getSeconds();
+    return hours + ":" + minutes + ":" + seconds;
   }
 
   /**
@@ -242,4 +245,3 @@ class DateUnil {
     return timeString;
   }
 }
-export { DateUnil };

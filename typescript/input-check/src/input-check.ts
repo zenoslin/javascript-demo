@@ -1,4 +1,4 @@
-export class inputCheck {
+export class InputCheck {
   constructor($content: string = "") {
     this.input = $content;
     this.errorMessage = "没有通过校验";
