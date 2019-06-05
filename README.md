@@ -5,6 +5,7 @@
 
 ## 导航
 
+- [图集分解](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/%E5%9B%BE%E9%9B%86%E5%88%86%E8%A7%A3)
 - [日期时间模块](https://github.com/zenoslin/javascript-demo/tree/master/typescript/date-util)
 - [输入检查模块](https://github.com/zenoslin/javascript-demo/tree/master/typescript/input-check)
 - [有趣！用 JavaScript 和 Emoji 做地址栏动画](https://github.com/zenoslin/javascript-demo/tree/master/js/Emoji-in-bar)
