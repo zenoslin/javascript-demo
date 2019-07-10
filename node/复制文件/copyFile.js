@@ -7,7 +7,7 @@ const fs = require("fs");
  *
  * @param {string} src
  * @param {string} dist
- * 
+ *
  * @return {Promise}
  */
 const copyFileSync = async function(src, dist) {
@@ -27,17 +27,17 @@ const copyFileSync = async function(src, dist) {
  * @param {string} dist
  */
 const copyFile = async function(src, dist) {
-  await checkDirectory(src, dist);
+  await checkDirectory(dist);
   copy(src, dist);
 };
 
-const checkDirectory = function(src, dist) {
+const checkDirectory = function(dist) {
   return new Promise((resolve, reject) => {
     fs.access(dist, fs.constants.F_OK, err => {
       if (err) {
         fs.mkdirSync(dist);
       }
-      resolve(src);
+      resolve();
     });
   });
 };
@@ -53,7 +53,7 @@ const copySync = async function(src, dist) {
       let writable = fs.createWriteStream(_dist);
       readable.pipe(writable);
     } else if (_stats.isDirectory()) {
-      await checkDirectory(_src, _dist);
+      await checkDirectory(_dist);
       await copySync(_src, _dist);
     }
   }
@@ -70,7 +70,7 @@ const copy = async function(src, dist) {
       let writable = fs.createWriteStream(_dist);
       readable.pipe(writable);
     } else if (_stats.isDirectory()) {
-      checkDirectory(_src, _dist).then(res => {
+      checkDirectory(_dist).then(() => {
         copy(_src, _dist);
       });
     }

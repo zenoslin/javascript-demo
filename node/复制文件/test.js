@@ -9,4 +9,4 @@ copyFileSync(source, dirname).then(res => {
   console.timeEnd('copyFileSync')
 });
 
-copyFile(source, dirname);
+// copyFile(source, dirname);
