@@ -1,6 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
+/**
+ * @function removeFile 异步冒泡删除文件（深度模式）
+ * 
+ * @param {string} $path 目标文件（文件夹）
+ * @param {function} callback 回调函数
+ */
 const removeFile = ($path, callback) => {
   fs.readdir($path, (err, files) => {
     removeNext(files, 0, $path, callback);
@@ -23,6 +29,13 @@ const removeNext = (files, index, $path, callback) => {
   });
 };
 
+/**
+ * @function removeFileSync 同步删除（广度模式）
+ * 
+ * @param {string} $path 目标文件（文件夹）
+ * 
+ * @return {Promise}
+ */
 const removeFileSync = $path => {
   return new Promise((resolve, reject) => {
     let arr = [$path];
