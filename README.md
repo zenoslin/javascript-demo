@@ -4,7 +4,7 @@
 这个仓库用来存放一些`JavaScript Demo`或笔记。
 
 ## 导航
-
+- [接口节流](https://github.com/zenoslin/javascript-demo/blob/master/JavaScript/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/apiThrottle.js)
 - [图集分解](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/%E5%9B%BE%E9%9B%86%E5%88%86%E8%A7%A3)
 - [日期时间模块](https://github.com/zenoslin/javascript-demo/tree/master/typescript/date-util)
 - [输入检查模块](https://github.com/zenoslin/javascript-demo/tree/master/typescript/input-check)
