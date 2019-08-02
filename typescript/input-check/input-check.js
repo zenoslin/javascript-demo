@@ -59,6 +59,16 @@ var InputCheck = (function () {
         }
         return this;
     };
+    InputCheck.prototype.isMobile = function ($message) {
+        if (!this.isPass)
+            return this;
+        var mobileReg = /^[1]([3-9])[0-9]{9}$/;
+        if (!mobileReg.test(this.input)) {
+            this.errorMessage = $message;
+            this.isPass = false;
+        }
+        return this;
+    };
     InputCheck.prototype.requireRegexp = function ($reg, $message) {
         if (!this.isPass)
             return this;
@@ -70,4 +80,4 @@ var InputCheck = (function () {
     };
     return InputCheck;
 }());
-export { InputCheck };
+export default InputCheck;

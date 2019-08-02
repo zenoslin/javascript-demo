@@ -1,4 +1,4 @@
-export declare class InputCheck {
+export default class InputCheck {
     constructor($content?: string);
     private input;
     private errorMessage;
@@ -9,5 +9,6 @@ export declare class InputCheck {
     maxLength($length: number, $message: string): this;
     isEmail($message: string): this;
     isURL($message: string): this;
+    isMobile($message: string): this;
     requireRegexp($reg: RegExp, $message: string): this;
 }

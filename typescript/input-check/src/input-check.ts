@@ -1,4 +1,4 @@
-export class InputCheck {
+export default class InputCheck {
   constructor($content: string = "") {
     this.input = $content;
     this.errorMessage = "没有通过校验";
@@ -67,6 +67,16 @@ export class InputCheck {
       "i"
     );
     if (!urlReg.test(this.input)) {
+      this.errorMessage = $message;
+      this.isPass = false;
+    }
+    return this;
+  }
+
+  isMobile($message: string) {
+    if (!this.isPass) return this;
+    const mobileReg = /^[1]([3-9])[0-9]{9}$/;
+    if (!mobileReg.test(this.input)) {
       this.errorMessage = $message;
       this.isPass = false;
     }
