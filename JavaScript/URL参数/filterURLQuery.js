@@ -1,4 +1,19 @@
-export default function getShareURL(
+/**
+ * @author       Zenos Lin <zenoslin@outlook.com>
+ * @copyright    2019 Zenos Lin.
+ */
+
+/**
+ * @function filterURLQuery 过滤URL参数
+ *
+ * @param {array<string>} $delete 删除参数数组
+ * 示例：['code', 'openId']
+ * @param {array<string>} $add 增加参数数组
+ * 示例：['code=1', 'openId=ABC']
+ * @param {string} targetURL  目标地址（默认本站点地址）
+ */
+
+export default function filterURLQuery(
   $delete = [],
   $add = [],
   targetURL = window.location.origin
