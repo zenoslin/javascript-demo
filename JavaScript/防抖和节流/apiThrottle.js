@@ -3,6 +3,7 @@
  * @copyright    2019 Zenos Lin.
  */
 
+// 记录函数节流状态
 const canRun = {};
 
 /**
@@ -16,6 +17,7 @@ const canRun = {};
  */
 export default function throttle(fn, list = [], throttleCode = 9999) {
   if (canRun[fn.name]) return Promise.reject(throttleCode);
+  if (!(fn instanceof Function)) return Promise.reject("fn is not a function");
   canRun[fn.name] = true;
   return fn(...list)
     .then(res => {
