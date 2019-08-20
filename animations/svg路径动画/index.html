@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GetImageInfo</title>
+
+    <!-- svg库 -->
+    <script src="snap.svg-min.js"></script>
+
+    <style>
+      body {
+        background: #000;
+      }
+      .start {
+        position: absolute;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: vw(100);
+        background: #fff;
+      }
+      #box {
+        width: vw(380);
+        height: vw(328);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      id="box"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 380.96 328.41"
+    >
+      <g id="path">
+        <path
+          d="M209.4,229.73c-37.78,16.94-119.57-21.6-134.16-71.92C56.14,92,94.3,32.95,139.9,12.05S297.28-10.47,359,86.28,338.78,316.24,244.29,327C155.61,337,14,264.93,14,163.67"
+          style="fill:none;stroke:#fff;stroke-miterlimit:10"
+        />
+      </g>
+      <g id="rocket">
+        <path
+          d="M14,148.84H5.64a99.54,99.54,0,0,0,1.23,14.31c1.59,8.48,5.29,15.14,7.17,16.61,1.88-1.47,5.58-8.13,7.17-16.61a99.59,99.59,0,0,0,1.23-14.31Z"
+          style="fill:#ecb33e"
+        />
+        <path
+          d="M13.85,148.84H8.05A126.57,126.57,0,0,0,9,163c1.12,6.73,3.74,12,5.07,13.19C15.37,175,18,169.7,19.11,163A126.57,126.57,0,0,0,20,148.84Z"
+          style="fill:#fecb58"
+        />
+        <polygon
+          points="28.09 149.23 22.45 145.62 22.45 148.84 5.64 148.84 5.64 145.62 0 149.23 4.31 161.64 4.08 151.41 4.55 151.25 4.54 151.27 23.55 151.27 23.54 151.25 24 151.41 23.77 161.64 28.09 149.23"
+          style="fill:#fff"
+        />
+        <path
+          d="M22.45,148.84H5.64V127.15s-.31-7.57,8.4-7.57,8.4,7.57,8.4,7.57Z"
+          style="fill:#5faedf"
+        />
+        <path
+          d="M13.91,120.43c-.22,0-.42,0-.65,0-7,0-6.71,6.83-6.71,6.83v21.61h1.3V127.23S7.64,120.81,13.91,120.43Z"
+          style="fill:#7acaf1"
+        />
+        <circle cx="14.04" cy="128.61" r="3.56" />
+      </g>
+    </svg>
+    <button class="start" onclick="handleStart()">START</button>
+    <script src="./main.js"></script>
+  </body>
+</html>
