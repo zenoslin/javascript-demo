@@ -1,0 +1,19 @@
+{
+  "name": "mini-event",
+  "version": "0.1.0",
+  "description": "A mini event manager.",
+  "main": "main.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "tsc -p ./test && jest",
+    "jest": "jest"
+  },
+  "keywords": [
+    "event"
+  ],
+  "author": "zenoslin",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
