@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unblock Music</title>
+
+    <style></style>
+  </head>
+  <body>
+    <div>
+      <img src="./test.jpeg" alt="" />
+      <img id="img" src="" alt="" />
+      <button id="btn">开启</button>
+    </div>
+
+    <script>
+      let imgs = ["./test.jpeg"];
+
+      window.onload = function() {
+        preLoad(imgs);
+        let btn = document.getElementById("btn");
+        let img = document.getElementById("img");
+        btn.addEventListener("click", event => {
+          img.src = "./test.jpeg";
+        });
+      };
+
+      function preLoad(imgPathList) {
+        const imgs = imgPathList;
+        imgs.forEach(element => {
+          const image = new Image();
+          image.src = element;
+        });
+      }
+    </script>
+  </body>
+</html>
