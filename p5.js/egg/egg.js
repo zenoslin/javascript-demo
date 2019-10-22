@@ -2,7 +2,6 @@ let xoff1 = 0,
   xoff2 = 0,
   vertices1,
   vertices2;
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
@@ -17,7 +16,7 @@ function draw() {
   vertices1 = [];
   for (let i = 0; i < 8; i++) {
     let angle = 2 * PI * (i / 8);
-    let r = map(noise(xoff1 + 100 * 1), 0, 1, 100, 270);
+    let r = map(noise(xoff1 + 100 * i), 0, 1, 100, 270);
     vertices1.push(r * cos(angle), -r * sin(angle));
     xoff1 += 0.0009;
   }
@@ -25,9 +24,9 @@ function draw() {
 
   fill("#ffef00");
   vertices2 = [];
-  for (let i = 0; i < 6; i++) {
-    let angle = 2 * PI * (i / 6);
-    let r = map(noise(xoff2 + 150 * i), 0, 1, 50, 100);
+  for (let j = 0; j < 6; j++) {
+    let angle = 2 * PI * (j / 6);
+    let r = map(noise(xoff2 + 150 * j), 0, 1, 50, 100);
     vertices2.push(r * cos(angle), -r * sin(angle));
     xoff2 += 0.001;
   }
@@ -44,6 +43,7 @@ p5.prototype.amoeba = function(x, y, ctrl, vertices) {
   translate(x, y);
   beginShape();
   vertex(segments[0].x, segments[0].y);
+
   for (let i = 0; i < segments.length - 1; i++) {
     let firstAngle = segments[i].heading();
     let secondAngle = segments[i + 1].heading();
@@ -57,6 +57,7 @@ p5.prototype.amoeba = function(x, y, ctrl, vertices) {
       segments[i + 1].y
     );
   }
+
   endShape();
   pop();
 };
