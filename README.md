@@ -5,7 +5,12 @@
 
 ## 导航
 
-### 实用工具类
+### 有趣
+
+- [随便变化的煎蛋 - p5.js](https://github.com/zenoslin/javascript-demo/tree/master/p5.js/egg)
+- [有趣！用 JavaScript 和 Emoji 做地址栏动画](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/Emoji-in-bar)
+
+### 实用工具
 
 - [接口节流](https://github.com/zenoslin/javascript-demo/blob/master/JavaScript/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/apiThrottle.js)
 - [图集分解](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/%E5%9B%BE%E9%9B%86%E5%88%86%E8%A7%A3)
@@ -18,7 +23,7 @@
 - [懒加载](https://github.com/zenoslin/javascript-demo/blob/master/JavaScript/%E9%A2%84%E5%8A%A0%E8%BD%BD/PreLoad.js)
 - [axios 封装](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/axios-demo)
 
-### 原理类
+### 原理
 
 - [Vue 简单原理](https://github.com/zenoslin/javascript-demo/tree/master/Vue/Vue%E5%8E%9F%E7%90%86)
 - [手写 call&bind](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/bind%26call)
@@ -26,5 +31,4 @@
 
 ### 未分类
 
-- [有趣！用 JavaScript 和 Emoji 做地址栏动画](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/Emoji-in-bar)
 - [跨域](https://github.com/zenoslin/javascript-demo/tree/master/JavaScript/%E8%B7%A8%E5%9F%9F)
