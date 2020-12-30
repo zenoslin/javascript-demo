@@ -1,0 +1,17 @@
+{
+    "name": "koa-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "dependencies": {},
+    "devDependencies": {
+        "koa": "^2.11.0",
+        "koa-bodyparser": "^4.2.1",
+        "koa-router": "^7.4.0"
+    },
+    "scripts": {
+        "start": "node main.js"
+    },
+    "author": "",
+    "license": "ISC"
+}
