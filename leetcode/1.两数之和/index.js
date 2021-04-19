@@ -41,7 +41,7 @@ var twoSum3 = function(nums, target, i = 0, maps = {}) {
     map[nums[i]] = i;
     i++;
     if (i < nums.length) {
-      return twoSum(nums, target, i, map);
+      return twoSum3(nums, target, i, map);
     } else {
       return;
     }
